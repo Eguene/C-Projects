@@ -86,8 +86,8 @@ public:
 Flat f[3];
 
 void search_owner(std::string own);//функція пошуку елементу за хазяїном
-void change_data(std::string own);//функція зміни даних елементу
-void delete_data(std::string own);//функція видалення елементу
+void change_data();//функція зміни даних елементу
+void delete_data();//функція видалення елементу
 
 int main()
 {
@@ -110,8 +110,8 @@ int main()
     std::cout<<f[0].get_owner()<<std::endl;
 
     search_owner("Alibaba");
-    change_data("Ivan");
-    delete_data("Ivan");
+    change_data();
+    delete_data();
 }
 
 void search_owner(std::string own)//функція пошуку елементу за хазяїном
@@ -123,15 +123,16 @@ void search_owner(std::string own)//функція пошуку елементу
     }
 }
 
-void change_data(std::string own)//функція зміни даних елементу
+void change_data()//функція зміни даних елементу
 {
     int i = 0;
+    std::string own = "unknown";
     int sq = 0;
     int ro = 0;
     int fl = 0;
     for(i=0; i<=2; i++)
     {
-        f[i].search_owner_met(own);
+        f[i].Print();
         std::cout<<"Result number: "<<i<<std::endl;
     }
     std::cout<<"Choose an element to change: "<<std::endl;
@@ -185,13 +186,13 @@ void change_data(std::string own)//функція зміни даних елем
     f[i].Print();
 }
 
-void delete_data(std::string own)//функція видалення елементу
+void delete_data()//функція видалення елементу
 {
     int i = 0;
 
     for(i=0; i<=2; i++)
     {
-        f[i].search_owner_met(own);
+        f[i].Print();
         std::cout<<"Result number: "<<i<<std::endl;
     }
     std::cout<<"Choose an element to delete: "<<std::endl;
